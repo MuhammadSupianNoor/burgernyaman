@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    margin: 50px;
+   
+}
+html {
+	scroll-behavior: smooth;
+}
+
+/* Container */
+
+.container {
+    display: grid;
+    gap: 10px;
+}
+/* Header */
+
+.header{
+    display: grid;
+    grid-template-areas: 
+    'hero hero fitur-1'
+    'hero hero fitur-2';
+}
+
+.hero{
+    grid-area: hero;
+    min-height: 300px;
+    background-image: url(img/burger5.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.hero > *{
+    display: none;
+}
+
+.fitur{
+    background-color: black;
+    color: white;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.fitur-1{
+    grid-area: fitur-1;
+    background-image: url(img/burger3.jpg);
+    background-size: cover;
+}
+
+.fitur-2{
+    grid-area: fitur-2;
+    background-image: url(img/burger12.jpg);
+    background-size: cover;
+}
+
+.fitur .price{
+    font-size: 3em;
+    font-weight: 200;
+}
+
+/* Nav */
+
+.nav{
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.nav .logo{
+    font-size: 1.3em;
+    color:  teal;
+}
+
+.nav ul{
+    list-style: none ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.nav a{
+    background-color: teal;
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+
+
+/*Menu Humberger*/
+
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: teal;
+    border-radius: 3px;
+    transition: all 0,5s;
+}
+
+.menu-toggle input{
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform:rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform:rotate(-45deg) translate(-1px, 0px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/*tentang*/
+.tentang{
+    margin-top: 100px;
+    display: grid;
+    gap: 5px;
+    
+
+}
+.tentang h2{
+    grid-column: 1/-1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*Produk/layanan*/
+.pelayanan{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+}
+
+
+.layanan{
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid teal;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0,0, 0.5);
+   
+}
+
+.layanan:hover{
+    transform: scale(1.1);
+}
+
+.layanan .icon{
+    font-size: 3em;
+}
+
+.layanan h3{
+    font-size: 1.5em;
+}
+
+.layanan p{
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+}
+
+.pelayanan h2{
+    grid-column: 1/-1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/**/
+
+.kontak2{
+ 
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+   
+
+}
+
+
+.kontak{
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-container{
+    width: 300px;
+    height: 430px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 1px 10px 1px #000;
+}
+
+.upper-container{
+    height: 150px;
+    background: teal;
+}
+
+.image-container{
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    transform: translate(100px, 100px);
+    overflow: hidden;
+    display: inline-block;
+}
+
+.image-container img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.lower-container{
+    height: 180px;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.lower-container h3, h4{
+    box-sizing: border-box;
+    line-height: .6;
+    font-weight: lighter;
+}
+.lower-container h3{
+    margin-top: 50px;
+}
+.lower-container h4{
+    color:teal;
+    opacity: .6;
+    font-weight: bold;
+}
+
+.lower-container .btn2{
+    padding: 12px 20px;
+    background: teal;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease-in;
+}
+
+.lower-container.btn2:hover{
+    background: transparent;
+    color: #7f00ff;
+    border: 2px solid #7f00ff;
+}
+
+/*galeri*/
+.gambar {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+.gambar h2{
+    grid-column: 1/-1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+	
+
+
+/* Responsive */
+@media (max-width: 1024px){
+.nav {
+    order: inherit;
+    grid-template-columns: 1fr;
+}
+.nav .logo{
+    display: none;
+}
+
+.hero > * {
+ display: block;
+ background-color: black;
+ color: white;
+ padding: 5px;
+ margin-bottom: 5px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+}
+
+@media (max-width: 768px){
+.nav{
+    order: -1;
+    justify-items: end;
+}
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .nav ul{
+        display: flex;
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: teal;
+        width: 25%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 1;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .nav ul.slide{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px){
+
+    body{
+        margin: 15px;
+    }
+    
+   
+    .nav .logo{
+        display: flex;
+        position: absolute;
+      justify-content: center;
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+
+   
+
+    .header{
+        grid-template-areas: 
+        'hero'
+        'fitur-1'
+        'fitur-2';
+    }
+    .hero{
+        margin-top: 5px;
+    }
+
+    .footer-container{
+        display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .kontak2{
+ 
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+       
+    }
+    .right-col{
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .left-col{
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn{
+        margin: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* footer*/
+.footer{
+    background-color: teal;
+    padding: 90px 0;
+}
+
+.footer-container{
+    
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+.logo-footer{
+width: 180px;
+}
+
+.social-media{
+    margin: 20px 0;
+}
+
+.social-media a{
+    color: #001a21;
+    margin-right: 25px;
+    font-size: 22px;
+    text-decoration: none;
+    text-replace: .3s linear;
+}
+
+.social-media a:hover{
+    color: #fc5c65;
+}
+
+.right-col h1{
+    font-size: 26px;
+}
+
+.border{
+    width: 100px;
+    height: 4px;
+    background: #fc5c65;
+}
+
+.berlanganan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.txtb{
+    display: flex;
+    padding: 18px 40px;
+    font-size: 16px;
+    color: #293043;
+    background: #ddd;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    min-width: auto;
+}
+
+.btn{
+    padding: 18px 40px;
+    font-size: 16px;
+    color: #f1f1f1;
+    background: #fc5c65;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: opacity .3s linear;
+
+}
+
+.btn:hover{
+    opacity: .7;
+}
+
